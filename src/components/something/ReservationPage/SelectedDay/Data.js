@@ -4,8 +4,7 @@ import styled from 'styled-components'
 const DataFrame = styled.div`
 width: 100%;
 height: 10%;
-border-bottom: 1px solid black;
-box-shadow: 0 0 1px inset black;
+border-bottom: 1px solid #00a271;
 padding-bottom: 20px;
 `
 

@@ -3,11 +3,11 @@ import styled from 'styled-components'
 import { withFirebase } from "../../../../../Firebase";
 
 
+
 const SingleTermStyle = styled.div`
-border-bottom: 1px solid black;
+border-bottom: 1px solid #00a271;
 width:100%;
 height: 10%;
-box-shadow: 0 0 1px inset black;
 display: flex;
 justify-content: space-around;
 padding: 5px 0px 5px 10px;
@@ -60,11 +60,6 @@ transition: 0.3s;
     box - shadow: 0 0 2px 2px #343434;
 }
 `
-
-const Mess = styled.h2`
-font - size: 1rem;
-`
-
 
 class SingleTerm extends React.Component {
 

@@ -10,7 +10,7 @@ width:100%;
 border-radius:10px;
 box-shadow: 0 0 2px inset black;
 max-height: 45%;
-overflow-y: scroll;
+overflow: auto;
 `
 const Txt = styled.h2`
 padding: 10px 0px 10px 15px;
@@ -85,6 +85,7 @@ class Wizyty extends React.Component {
 
                         this.state.futureVisit.map(item =>
                             <OneElement
+                                key={Math.random(1000000)}
                                 hours={item.godzina}
                                 data={item.data}
                                 doctor={item.lekarz}

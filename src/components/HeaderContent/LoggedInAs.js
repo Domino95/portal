@@ -4,10 +4,17 @@ import { withFirebase } from "../../Firebase";
 
 
 const LoggenInAstyle = styled.div`
-font-size: 1.25rem;
+font-size: 2rem;
 color: black;
-top: 30px;
-padding: 5px;
+padding: 5px ;
+
+`
+const H2Styled = styled.a`
+font-size: 1.2rem ;
+
+`
+const LoggeUser = styled.div`
+text-align:center;
 `
 
 
@@ -31,7 +38,7 @@ class LoggenInAs extends React.Component {
 
         return (
             <>
-                <LoggenInAstyle>Zalogowany jako: <i>{this.state.currentuser}</i> </LoggenInAstyle>
+                <LoggeUser> <LoggenInAstyle className={"fas fa-user"} /> <H2Styled>{this.state.currentuser}</H2Styled> </LoggeUser>
             </>
         );
     }

@@ -18,6 +18,7 @@ const Global = createGlobalStyle`
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;1
       outline: none;
+      
   }
   button{
     cursor: pointer;

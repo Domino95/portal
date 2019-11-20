@@ -15,7 +15,7 @@ align-items: center;
 justify-content: center;
 display: flex;
 padding: 15px;
-box-shadow: 0 0 2px inset black;
+box-shadow: 1.5px 2.9px 0px 0px #d6d6d6;
 background-color: #deebdd;
 background-image: linear-gradient(315deg, #deebdd 0%, #bbdbbe 74%);
 `

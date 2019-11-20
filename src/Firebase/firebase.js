@@ -51,10 +51,9 @@ class Firebase {
         return this.auth.currentUser
 
     }
+
     getCurrentUser = () => {
         this.auth.onAuthStateChanged(user => {
-            console.log(user)
-
         })
     }
 

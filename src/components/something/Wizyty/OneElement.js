@@ -9,10 +9,9 @@ justify-content: space-around;
 font-size: 1.2rem;
 align-items: center;
 border-top: 1px solid;
-padding: 15px 0 15px;
+padding: 15px 0 15px; 
+box-shadow: 1.5px 2.9px 0px 0px #d6d6d6;`
 
-
- `
 
 const ButtonStyled = styled.button`
 width: 135px;
@@ -52,7 +51,6 @@ class OneElement extends React.Component {
             rezerwacje
         )
         alert("Rezerwacja pomyślnie usunięta!")
-
     }
 
 
