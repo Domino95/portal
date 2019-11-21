@@ -47,6 +47,19 @@ const UserPage = (props) => {
 
     )
   }
+
+  if (user.doctor) {
+    return (
+      <Router>
+        <Redirect to="/doctor" />
+        < WrapperMain >
+          <Header LogOutFunctions={props.LogOutFunctions} />
+          <Component />
+        </WrapperMain >
+      </Router>
+    )
+  }
+
   return (
 
     < WrapperMain >

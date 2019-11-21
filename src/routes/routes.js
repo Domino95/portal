@@ -6,5 +6,8 @@ export const placowki = "/placowki";
 export const rezerwacja = "/rezerwacja"
 export const szczegoly = "/wizyty/szczegoly";
 export const sekretariat = "/sekretariat"
+export const futureVisit = "/doctor/futureVisit"
+export const pastVisit = "/doctor/pastVisit"
+export const currentVisit = "/doctor/currentVisit"
 
 

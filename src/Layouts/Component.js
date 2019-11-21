@@ -10,8 +10,7 @@ import Start from '../components/something/Start/Start';
 import Szczegoly from '../components/something/Szczegoly/Szczegoly'
 import SecretariatComponent from "../components//something//Secretariat//SecretariatComponent"
 
-
-
+import Doctor from '../components/something/Doctor/Doctor'
 
 
 const Pag = styled.div` 
@@ -30,6 +29,7 @@ const Component = () => {
                 <Route path={rezerwacja} component={ReservationPage} />
                 <Route path={szczegoly} render={(props) => <Szczegoly {...props} isAuthed={true} />} />
                 <Route path={sekretariat} component={SecretariatComponent} />
+                <Route path="/doctor" component={Doctor} />
 
             </Switch>
 

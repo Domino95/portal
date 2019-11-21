@@ -2,6 +2,7 @@ import React from 'react';
 import styled from "styled-components";
 import { withFirebase } from "../../../Firebase";
 import InputsSecretariat from './InputsSecretariat'
+import Modal from './Modal';
 
 const Page = styled.div`
 background: #fff;
@@ -17,13 +18,16 @@ margin-top:10px;
 background: #f4f5f6;
 width:100%;
 margin-top:50px;
-padding: 30px 30px 30px 30px;`
+padding: 30px 30px 30px 30px;
+max-height: 80vh;
+`
 
 const Text = styled.a`
 width:100%;
 font-size: 2rem;
 padding: 20px 0 5px 5px;
-letter-spacing:1.1px;`
+letter-spacing:1.1px;
+display: flex;`
 
 const Elements = styled.div`
 display:flex;
@@ -81,7 +85,8 @@ padding:0 10px 0 10px;`
 const LoggenInAstyle = styled.div`
 font-size: 1.5rem;
 color: black;
-padding: 5px ;
+padding: 5px;
+cursor:pointer;
 `
 
 const Mess = styled.h1`
@@ -101,15 +106,26 @@ class SecretariatComponent extends React.Component {
         users: [],
         selectedData: '',
         selectedUser: "Wszyscy Pacjenci",
-        date: new Date().toISOString().slice(0, 10)
+        date: new Date().toISOString().slice(0, 10),
+        modal: false,
+        user: ''
     }
 
+    ChangeModal = (users) => {
+        if (users) {
+            const find = this.state.users.find(item => item[1].email === users)
+            this.setState({ modal: !this.state.modal, user: find[1] })
+
+        }
+        else {
+            this.setState({ modal: !this.state.modal })
+        }
+
+    }
 
     componentDidMount() {
         this.getData()
     }
-
-
 
 
     getData() {
@@ -164,28 +180,28 @@ class SecretariatComponent extends React.Component {
         }
     }
 
-    getUser = (user) => {
+    getUserDisplayName = (user) => {
         const find = this.state.users.find(item => item[1].email === user)
         return find[1].displayName
     }
 
 
-    render() {
-        console.log(this.state.wizyty, this.state.users)
-        console.log(this.state.selectedUser, this.state.date)
 
+    render() {
         return (
             <>
-
+                {this.state.modal ? <Modal user={this.state.user}
+                    ChangeModal={() => this.ChangeModal()} /> : null}
                 <Frame>
-                    <Text>Wizyty </Text>
+                    <Text>Wizyty
                     <InputsSecretariat
-                        users={this.state.users}
-                        selectedUser={this.state.selectedUser}
-                        handleSelect={this.handleSelect}
-                        date={this.state.date}
-                        selectedData={this.state.selectedData}
-                    />
+                            users={this.state.users}
+                            selectedUser={this.state.selectedUser}
+                            handleSelect={this.handleSelect}
+                            date={this.state.date}
+                            selectedData={this.state.selectedData}
+                        />
+                    </Text>
                     <Elementss>
                         <Panel>Doktor</Panel>
                         <Panel>Godzina</Panel>
@@ -203,7 +219,16 @@ class SecretariatComponent extends React.Component {
                                     <Hour>{item.godzina}</Hour>
                                     <Institution>{item.placówka}</Institution>
                                     <Data>{item.data}</Data>
-                                    <Patient ><LoggenInAstyle className="fas fa-user" /> {this.getUser(item.user)}</Patient>
+                                    <Patient >
+                                        <LoggenInAstyle className="fas fa-user"
+                                            onClick={() => this.ChangeModal(item.user)}
+                                        />
+                                        {this.getUserDisplayName(item.user)}
+                                    </Patient>
+
+
+
+
                                 </Elements>))}
                     </Page>
                 </Frame>

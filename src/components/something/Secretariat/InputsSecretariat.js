@@ -10,8 +10,6 @@ const InputData = styled.input`
   border-radius: 5px;
   box-shadow: 0 0 3px inset black;
   background-color: #fff;
-  right: 15%;
-  position: absolute;
 
   &::placeholder {
     font-size: 0.8rem;
@@ -26,19 +24,28 @@ border: none;
 border-radius: 5px;
 box-shadow: 0 0 3px inset black;
 background-color: #fff;
-right: 30%;
-position: absolute;
+margin-right: 2%;
+
+
 
 &::placeholder {
   font-size: 0.8rem;
 }`
+
+const Container = styled.div`
+justify-content: flex-end;
+width: 100%;
+text-align: right;
+margin-left: 2%;
+
+`
 
 
 
 const InputsSecretariat = (props) => {
     const { selectedUser, users, handleSelect, date } = props
     return (
-        <>
+        <Container>
             <InputUser
                 value={selectedUser ? selectedUser : ""}
                 id='selectedUser'
@@ -64,7 +71,7 @@ const InputsSecretariat = (props) => {
                 max="2020-04-07"
                 onChange={handleSelect} />
 
-        </>
+        </Container>
     );
 }
 
