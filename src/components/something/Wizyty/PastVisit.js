@@ -76,7 +76,8 @@ const PastVisits = (props) => {
                                     godzina: item.godzina,
                                     data: item.data,
                                     lekarz: item.lekarz,
-                                    placówka: item.placówka
+                                    placówka: item.placówka,
+                                    komentarz: item.komentarz
                                 }
                             }}>
                                 < ReservationButtonStyle>Szczegóły</ReservationButtonStyle>

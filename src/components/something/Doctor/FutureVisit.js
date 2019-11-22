@@ -10,8 +10,9 @@ justify-content: space-around;
 align-items: baseline;
 `
 
-const OneElement = styled.div`
+const OneElement = styled.h4`
 width: 33%;
+padding-left: 20px;
 `
 const Page = styled.div`
 background: #fff;
@@ -103,8 +104,8 @@ class FutureVisit extends React.Component {
                     this.state.futureVisit.map(item => (
                         <Page key={Math.random(10000000000)}>
                             <BoxElement >
-                                <OneElement>{item.godzina}</OneElement>
-                                <OneElement> <strong>{item.data}</strong></OneElement>
+                                <OneElement><strong>{item.godzina}</strong></OneElement>
+                                <OneElement> {item.data}</OneElement>
                                 <OneElement> <LoggenInAstyle className="fas fa-user" />{this.getDisplayName(item.user)}</OneElement>
                             </BoxElement>
                         </Page>

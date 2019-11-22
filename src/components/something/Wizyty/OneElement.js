@@ -58,6 +58,7 @@ class OneElement extends React.Component {
 
 
     render() {
+        console.log(this.props.wizytyAll, this.props.hours)
         const { hours, data, doctor, placówka } = this.props
 
         return (

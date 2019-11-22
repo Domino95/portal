@@ -10,8 +10,9 @@ justify-content: space-around;
 align-items: baseline;
 `
 
-const OneElement = styled.div`
+const OneElement = styled.h4`
 width: 33%;
+padding-left: 20px;
 `
 const Page = styled.div`
 background: #fff;
@@ -30,7 +31,6 @@ const Mess = styled.div`
 font-size: 1.3rem;
 
 `
-
 
 
 class FutureVisit extends React.Component {
@@ -75,7 +75,7 @@ class FutureVisit extends React.Component {
             filterdoctor.map(item => {
                 if (new Date().toISOString().slice(0, 10) > item.data)
                     pastVisit.push(item)
-                else if (new Date().toISOString().slice(0, 10) === item.data && new Date().getHours() >= item.godzina.slice(0, 2))
+                else if (new Date().toISOString().slice(0, 10) === item.data && new Date().getHours() > item.godzina.slice(0, 2))
                     pastVisit.push(item)
                 return item
             })
@@ -93,7 +93,6 @@ class FutureVisit extends React.Component {
 
 
     render() {
-        console.log(this.state.users)
         return (
             <>
                 {this.state.pastVisit.length === 0 ? <Page><Mess>Nie masz odbytych wizyt</Mess> </Page> :
@@ -101,8 +100,8 @@ class FutureVisit extends React.Component {
                         <Page key={Math.random(10000000000)}>
                             <BoxElement >
                                 <OneElement>{item.godzina}</OneElement>
-                                <OneElement> <strong>{item.data}</strong></OneElement>
-                                <OneElement> <LoggenInAstyle className="fas fa-user" />{this.getDisplayName(item.user)}</OneElement>
+                                <OneElement><strong>{item.data}</strong></OneElement>
+                                <OneElement><LoggenInAstyle className="fas fa-user" />{this.getDisplayName(item.user)}</OneElement>
                             </BoxElement>
                         </Page>
                     ))}

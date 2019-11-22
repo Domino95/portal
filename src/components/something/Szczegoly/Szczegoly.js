@@ -42,8 +42,8 @@ class Szczegoly extends React.Component {
 
 
     render() {
-        const { data, godzina, lekarz, placówka } = this.props.location.aboutProps
-
+        const { data, godzina, lekarz, placówka, komentarz } = this.props.location.aboutProps
+        console.log(komentarz)
 
 
         return (
@@ -59,21 +59,11 @@ class Szczegoly extends React.Component {
 
                     <Txt2>Przebieg wizyty oraz wskazania doktora: </Txt2>
                     < Comment>
-                        <text> DUPA
-                         BLADA
-                         OLGA
-                         BABA
-                         JAGA
-
-                         DUPA
-                         BLADA
-                         OLGA
-                         BABA
-                        JAGA</text>
+                        {komentarz.length > 0 ? <p>{komentarz}</p> : "Brak komentarza"}
                     </Comment>
                 </DetailsWrapper>
             </>
-        );
+        )
     }
 }
 

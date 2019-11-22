@@ -1,17 +1,19 @@
 import React from 'react';
 import styled from 'styled-components'
 import { withFirebase } from "../../../Firebase";
-
+import Comment from './Comment'
 
 const BoxElement = styled.div`
-font-size: 1.3rem;
 display:flex;
 justify-content: space-around;
 align-items: baseline;
 `
 
-const OneElement = styled.div`
+const OneElement = styled.h4`
 width: 33%;
+padding-left: 20px;
+font-size: 1.3rem;
+
 `
 const Page = styled.div`
 background: #fff;
@@ -30,18 +32,36 @@ const Mess = styled.div`
 font-size: 1.3rem;
 
 `
+const ReservationButtonStyle = styled.button`
+width: 145px;
+font-size: 0.85rem;
+height: 55px;
+background: rgb(64, 64, 64);
+color: white;
+border: 5px solid white;
+border-radius: 20px;
+transition: 0.3s;
+&: hover,
+&: focus {
+    box - shadow: 0 0 2px 2px #343434;
+}
+`
 
 
 
 class CurrentVisit extends React.Component {
 
     state = {
-        wizyty: [],
-        futureVisit: [],
-        pastVisit: [],
         currentVisit: [],
         currentdoctor: '',
-        users: []
+        users: [],
+        commentActive: false,
+        wizyty: []
+    }
+
+
+    addComment = () => {
+        this.setState({ commentActive: !this.state.commentActive })
     }
 
     componentWillMount() {
@@ -51,6 +71,11 @@ class CurrentVisit extends React.Component {
     componentDidMount() {
         this.getData()
     }
+
+    handleChange = (e) => {
+        this.setState({ comment: e.target.value })
+    }
+
 
     getData() {
         this.props.firebase.db.ref(`users/${this.props.firebase.getCurrentInfoUser().uid}`).on('value', snapshot => {
@@ -74,13 +99,14 @@ class CurrentVisit extends React.Component {
             const currentVisit = []
 
             filterdoctor.map(item => {
-                if (new Date().toISOString().slice(0, 10) === item.data && new Date().getHours() === item.godzina.slice(0, 2))
-                    currentVisit.push(item)
 
+                if (new Date().toISOString().slice(0, 10) === item.data && new Date().getHours() === parseInt((item.godzina.slice(0, 2))))
+                    currentVisit.push(item)
+                return item
             })
             this.setState({ currentVisit })
-
         })
+
 
     }
 
@@ -92,19 +118,32 @@ class CurrentVisit extends React.Component {
 
 
     render() {
-        console.log(this.state.users)
         return (
             <>
-                {this.state.currentVisit.length === 0 ? <Page><Mess>Nie masz obecnie wizyty</Mess> </Page> :
-                    this.state.currentVisit.map(item => (
-                        <Page key={Math.random(10000000000)}>
-                            <BoxElement >
-                                <OneElement>{item.godzina}</OneElement>
-                                <OneElement> <strong>{item.data}</strong></OneElement>
-                                <OneElement> <LoggenInAstyle className="fas fa-user" />{this.getDisplayName(item.user)}</OneElement>
-                            </BoxElement>
-                        </Page>
-                    ))}
+                {
+                    this.state.currentVisit.length === 0 ? <Page><Mess>Nie masz obecnie wizyty</Mess> </Page> :
+                        this.state.currentVisit.map(item => (
+                            <Page key={Math.random(10000000000)}>
+                                <BoxElement >
+                                    <OneElement>{item.godzina}</OneElement>
+                                    <OneElement> <strong>{item.data}</strong></OneElement>
+                                    <OneElement> <LoggenInAstyle className="fas fa-user" />{this.getDisplayName(item.user)}</OneElement>
+                                    <ReservationButtonStyle onClick={() => this.addComment()}> Dodaj komentarz</ReservationButtonStyle>
+                                </BoxElement>
+                                {this.state.commentActive ? this.state.currentVisit.map(item => (
+                                    <Comment key={item.user}
+                                        godzina={item.godzina}
+                                        data={item.data}
+                                        placówka={item.placówka}
+                                        lekarz={item.lekarz}
+                                        user={item.user}
+                                        comment={item.komentarz}
+                                        addComment={() => this.addComment()}
+                                        clicK={this.clicK}
+                                    />)) : null}
+                            </Page>
+                        ))
+                }
             </>
         );
     }
