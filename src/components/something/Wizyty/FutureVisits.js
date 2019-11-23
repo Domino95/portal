@@ -3,18 +3,20 @@ import styled from 'styled-components';
 import { withFirebase } from "../../../Firebase";
 
 
-const OneElemenStyled = styled.div`
-display: flex;
-justify-content: space-around;
-font-size: 1.2rem;
-align-items: center;
-border-top: 1px solid;
-padding: 15px 0 15px; 
-box-shadow: 1.5px 2.9px 0px 0px #d6d6d6;`
+
+const Page = styled.div`
+width: 100%
+margin-top:15px
+box-shadow: 1.5px 2.9px 0px 0px #d6d6d6;
+padding: 10px;
+background: #fff;
+border: 1px solid #ddd;
+`
+
 
 
 const ButtonStyled = styled.button`
-width: 135px;
+width: 145px;
 font-size: 1rem;
 height: 50px;
 background: rgb(64, 64, 64);
@@ -27,8 +29,26 @@ transition: 0.3s;
     box - shadow: 0 0 2px 2px #343434;
 }
 `
+const OneElement = styled.div`
+width: 100%;
+padding-left: 20px
+display: flex;
+width: 100%%;
+align-items: baseline;
+`
 
-class OneElement extends React.Component {
+const Element = styled.h2`
+display: flex;
+font-size: 1.5rem;
+width: 20%;`
+
+const ElementHour = styled.h2`
+display: flex;
+font-size: 1.5rem;
+width: 20%;
+color: #00a271;`
+
+class FutureVisits extends React.Component {
 
 
 
@@ -58,24 +78,29 @@ class OneElement extends React.Component {
 
 
     render() {
-        console.log(this.props.wizytyAll, this.props.hours)
         const { hours, data, doctor, placówka } = this.props
 
         return (
 
 
-            <OneElemenStyled>
-                <p>{hours}</p>
-                <p>{data}</p>
-                <p>{doctor}</p>
-                <p>{placówka}</p>
-                <ButtonStyled onClick={this.deleteReservation}>Odwołaj Wizytę</ButtonStyled>
 
-            </OneElemenStyled>
+
+            <Page>
+
+                <OneElement>
+                    <ElementHour>{hours}</ElementHour>
+                    <Element>{data}</Element>
+                    <Element>{doctor}</Element>
+                    <Element>{placówka}</Element>
+                    <ButtonStyled onClick={this.deleteReservation}>Odwołaj Wizytę</ButtonStyled>
+
+                </OneElement>
+            </Page>
+
 
 
         );
     }
 }
 
-export default withFirebase(OneElement);
+export default withFirebase(FutureVisits);

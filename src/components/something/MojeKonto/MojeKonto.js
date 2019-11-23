@@ -20,7 +20,6 @@ background: #f4f5f6;
 width:100%;
 margin-top:50px;
 padding: 30px 30px 30px 30px;
-box-shadow: 1.5px 2.9px 0px 0px #d6d6d6;
 `
 
 const Lables = styled.label`

@@ -17,7 +17,7 @@ padding-left: 20px;
 const Page = styled.div`
 background: #fff;
 width: 100%
-height:80%;
+height:7%;
 margin-top:15px
 box-shadow: 1.5px 2.9px 0px 0px #d6d6d6;
 padding: 15px;
@@ -33,7 +33,7 @@ font-size: 1.3rem;
 `
 
 
-class FutureVisit extends React.Component {
+class PastVisits extends React.Component {
 
     state = {
         wizyty: [],
@@ -110,4 +110,4 @@ class FutureVisit extends React.Component {
     }
 }
 
-export default withFirebase(FutureVisit);
+export default withFirebase(PastVisits);

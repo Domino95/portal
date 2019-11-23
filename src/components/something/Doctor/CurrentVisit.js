@@ -7,6 +7,8 @@ const BoxElement = styled.div`
 display:flex;
 justify-content: space-around;
 align-items: baseline;
+font-size: 1.3rem;
+
 `
 
 const OneElement = styled.h4`
@@ -18,7 +20,7 @@ font-size: 1.3rem;
 const Page = styled.div`
 background: #fff;
 width: 100%
-height:80%;
+height:7%;
 margin-top:15px
 box-shadow: 1.5px 2.9px 0px 0px #d6d6d6;
 padding: 15px;
@@ -35,7 +37,7 @@ font-size: 1.3rem;
 const ReservationButtonStyle = styled.button`
 width: 145px;
 font-size: 0.85rem;
-height: 55px;
+height: 50px;
 background: rgb(64, 64, 64);
 color: white;
 border: 5px solid white;

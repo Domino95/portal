@@ -127,6 +127,18 @@ class SecretariatComponent extends React.Component {
         this.getData()
     }
 
+    Compare = (a) => {
+        var arr = [];
+        for (let i = 0; i < a.length; i++)
+            arr.push(a[i])
+        function compare(a, b) {
+            return (parseInt(a.godzina.slice(0, -3) - parseInt(b.godzina.slice(0, -3))))
+        }
+        arr.sort(compare);
+        return arr
+    }
+
+
 
     getData() {
         this.props.firebase.db.ref(`users`).on('value', snapshot => {
@@ -135,18 +147,18 @@ class SecretariatComponent extends React.Component {
             let users = Object.keys(value).map(function (key) {
                 return [key, value[key]];
             });
-
-            let index = users.findIndex(item => item[1].displayName === "Sekretariat Ruska")
+            let index = users.findIndex(item => item[1].displayName === "Sekretariat")
             users.splice(index, 1)
+            for (let i = 0; i < users.length; i++) {
+                let WithoutDoctor = users.findIndex(item => item[1].doctor === true)
+                users.splice(WithoutDoctor, 1)
+            }
             this.setState({ users })
         })
-
         this.props.firebase.Form().on('value', snapshot => {
             const value = snapshot.val()
             let selectedwizyty = value.Rezerwacje.rezerwacje.filter(item => item.data === this.state.date)
-
-            this.setState({ wizyty: value.Rezerwacje.rezerwacje, selectedwizyty })
-
+            this.setState({ wizyty: value.Rezerwacje.rezerwacje, selectedwizyty: this.Compare(selectedwizyty) })
         })
     }
 
@@ -157,35 +169,30 @@ class SecretariatComponent extends React.Component {
             if (this.state.selectedUser !== "Wszyscy Pacjenci") {
                 let userfilter = this.state.users.filter(item => item[1].displayName === this.state.selectedUser)
                 const selectedwizyty = this.state.wizyty.filter(item => item.data === value && item.user === userfilter[0][1].email)
-                this.setState({ selectedwizyty })
+                this.setState({ selectedwizyty: this.Compare(selectedwizyty) })
             }
             else {
                 const selectedwizyty = this.state.wizyty.filter(item => item.data === value)
-                this.setState({ selectedwizyty })
+                this.setState({ selectedwizyty: this.Compare(selectedwizyty) })
             }
         }
 
         if (id === "selectedUser") {
             if (value === "Wszyscy Pacjenci") {
                 const selectedwizyty = this.state.wizyty.filter(item => item.data === this.state.date)
-                this.setState({ selectedwizyty })
+                this.setState({ selectedwizyty: this.Compare(selectedwizyty) })
             }
             else {
                 const userfilter = this.state.users.filter(item => item[1].displayName === value)
                 const selectedwizyty = this.state.wizyty.filter(item => item.data === this.state.date && item.user === userfilter[0][1].email)
-                console.log(selectedwizyty)
-
-                this.setState({ selectedwizyty })
+                this.setState({ selectedwizyty: this.Compare(selectedwizyty) })
             }
         }
     }
-
     getUserDisplayName = (user) => {
         const find = this.state.users.find(item => item[1].email === user)
         return find[1].displayName
     }
-
-
 
     render() {
         return (
