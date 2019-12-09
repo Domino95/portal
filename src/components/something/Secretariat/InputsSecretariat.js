@@ -26,11 +26,10 @@ box-shadow: 0 0 3px inset black;
 background-color: #fff;
 margin-right: 2%;
 
-
-
 &::placeholder {
   font-size: 0.8rem;
-}`
+}
+`
 
 const Container = styled.div`
 justify-content: flex-end;

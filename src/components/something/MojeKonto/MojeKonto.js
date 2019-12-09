@@ -19,7 +19,7 @@ margin-top:10px;
 background: #f4f5f6;
 width:100%;
 margin-top:50px;
-padding: 30px 30px 30px 30px;
+padding: 15px;
 `
 
 const Lables = styled.label`
@@ -134,7 +134,7 @@ class MojeKonto extends React.Component {
             <IpnutStyled type="email" id="email" name="email" onChange={this.handleChange} value={this.state.email} disabled ></IpnutStyled></Lables>
 
                         <Lables htmlFor="phoneNumber">Twój numer telefonu
-            <IpnutStyled type="phoneNumber" id="phoneNumber" name='phoneNumber' value={this.state.phoneNumber}
+            <IpnutStyled type="tel" id="phoneNumber" name='phoneNumber' value={this.state.phoneNumber}
                                 onChange={this.handleChange}
                             ></IpnutStyled></Lables>
 

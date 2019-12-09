@@ -82,6 +82,9 @@ class ReservationPage extends React.Component {
         }
     };
 
+    handleDate = (e) => {
+        this.setState({ date: e.target.value })
+    }
 
 
     componentDidMount() {

@@ -1,9 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
 
-
-
-
 const InputStyle = styled.select`
   font-size: 15px;
   padding: 10px;
@@ -99,17 +96,19 @@ const Inputs = ({
         ))}
 
       </InputStyle>
-
       < InputData
         id="date"
         onChange={handleSelect}
         value={date}
         type="date"
         min={new Date().toISOString().slice(0, 10)}
-        max="2020-04-07"
+
+
       />
+
     </>
   );
 }
 
 export default Inputs;
+

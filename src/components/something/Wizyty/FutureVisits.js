@@ -82,10 +82,7 @@ class FutureVisits extends React.Component {
 
         return (
 
-
-
-
-            <Page>
+            < Page >
 
                 <OneElement>
                     <ElementHour>{hours}</ElementHour>
@@ -95,7 +92,7 @@ class FutureVisits extends React.Component {
                     <ButtonStyled onClick={this.deleteReservation}>Odwołaj Wizytę</ButtonStyled>
 
                 </OneElement>
-            </Page>
+            </Page >
 
 
 

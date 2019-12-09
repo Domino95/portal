@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { NavLink } from 'react-router-dom'
-import { user, wizyty, konto, placowki, rezerwacja } from '../routes/routes'
+import { user, wizyty, konto, artykuly, rezerwacja } from '../routes/routes'
 
 
 const Nav = styled.div`
@@ -21,11 +21,19 @@ const StyledLink = styled(NavLink)`
   font-weight: normal;
 
   &:hover{
-    border-bottom: solid black 2px;
+    color: #00a271;
+    -webkit-transition: opacity 500ms;
+    -moz-transition: opacity 500ms;
+    -o-transition: opacity 500ms;
+    transition: opacity 500ms;
 }
 
   &.active{
   font-weight: bold;
+  color: #00a271;
+  font-size: 30px;
+
+
 }
 `
 
@@ -38,7 +46,7 @@ const Navigation = () => {
         <StyledLink exact to={user}>Start </StyledLink>
         <StyledLink to={wizyty}>Wizyty </StyledLink>
         <StyledLink to={konto}>Moje Konto </StyledLink>
-        <StyledLink to={placowki}>Placówki </StyledLink>
+        <StyledLink to={artykuly}>Artykuły </StyledLink>
         <StyledLink to={rezerwacja}>Zarezerwuj Wizytę </StyledLink>
 
       </Nav>

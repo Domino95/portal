@@ -23,6 +23,25 @@ const Global = createGlobalStyle`
   button{
     cursor: pointer;
   }
+
+  input{
+  font-size: 15px;
+  padding: 10px;
+  height: 40px;
+  margin-right: 20px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 0 3px inset black;
+  background-color: #fff;
+  
+  &::placeholder {
+    font-size: 0.8rem;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
 `
 
 

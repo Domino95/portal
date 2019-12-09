@@ -9,12 +9,13 @@ background: #f4f5f6;
 width:100%;
 margin-top:30px;
 padding: 10px 30px 20px 30px;
-max-height: 60%;
+max-height: 60vh;
 display:block;
 `
 const FrameScroll = styled.div`
 overflow: auto;
-height: 26vh;
+max-height: 26vh;
+padding-bottom:3px;
 
 `
 
@@ -27,6 +28,23 @@ letter-spacing:1.1px;
 display: flex;
 border-bottom: 3px solid #ddd;
 margin-bottom:10px;`
+
+const Page = styled.div`
+width: 100%
+margin-top:15px
+box-shadow: 1.5px 2.9px 0px 0px #d6d6d6;
+padding: 10px;
+background: #fff;
+border: 1px solid #ddd;
+`
+const OneElement = styled.div`
+padding: 10px 20px 10px 20px;
+display: flex;
+width: 100%;
+align-items: baseline;
+font-size: 1.5rem;
+
+`
 
 
 class Wizyty extends React.Component {
@@ -122,17 +140,26 @@ class Wizyty extends React.Component {
             <>
                 <Frame>
                     <Text>Nadchodzące wizyty</Text>
-                    <FrameScroll>
-                        {this.state.futureVisit.map(item =>
-                            <FutureVisits
-                                key={Math.random(1000000)}
-                                hours={item.godzina}
-                                data={item.data}
-                                doctor={item.lekarz}
-                                placówka={item.placówka}
-                                wizytyAll={this.state.wizytyAll}
-                                currentuser={this.state.currentuser} />)}
-                    </FrameScroll>
+
+                    {this.state.futureVisit.length === 0 ?
+                        <Page>
+                            <OneElement>
+                                Nie masz zaplanowanych wizyt
+                                </OneElement>
+                        </Page>
+                        :
+                        <FrameScroll>
+                            {this.state.futureVisit.map(item =>
+                                <FutureVisits
+                                    key={Math.random(1000000)}
+                                    hours={item.godzina}
+                                    data={item.data}
+                                    doctor={item.lekarz}
+                                    placówka={item.placówka}
+                                    wizytyAll={this.state.wizytyAll}
+                                    currentuser={this.state.currentuser}
+                                />)}
+                        </FrameScroll>}
                 </Frame>
 
                 <PastVisits pastVisits={this.state.pastVisit} />

@@ -128,7 +128,7 @@ class SecretariatComponent extends React.Component {
     }
 
     Compare = (a) => {
-        var arr = [];
+        let arr = [];
         for (let i = 0; i < a.length; i++)
             arr.push(a[i])
         function compare(a, b) {
@@ -149,12 +149,12 @@ class SecretariatComponent extends React.Component {
             });
             let index = users.findIndex(item => item[1].displayName === "Sekretariat")
             users.splice(index, 1)
-            for (let i = 0; i < users.length; i++) {
-                let WithoutDoctor = users.findIndex(item => item[1].doctor === true)
-                users.splice(WithoutDoctor, 1)
-            }
-            this.setState({ users })
+
+            let usersWithoutDoctor = users.filter(item => item[1].doctor !== true)
+
+            this.setState({ users: usersWithoutDoctor })
         })
+
         this.props.firebase.Form().on('value', snapshot => {
             const value = snapshot.val()
             let selectedwizyty = value.Rezerwacje.rezerwacje.filter(item => item.data === this.state.date)

@@ -15,9 +15,9 @@ align-items: center;
 justify-content: center;
 display: flex;
 padding: 15px;
-box-shadow: 1.5px 2.9px 0px 0px #d6d6d6;
-background-color: #deebdd;
-background-image: linear-gradient(315deg, #deebdd 0%, #bbdbbe 74%);
+box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+background-image: linear-gradient(315deg, #00a271 0, #bbdbbe 74%);
+border: 1px solid #ddd;
 `
 
 
@@ -31,7 +31,8 @@ const Form = ({
     selectedspecialization,
     selectedplacowka,
     date,
-    selecteddoctor
+    selecteddoctor,
+    handleDate
 }) => {
 
     return (

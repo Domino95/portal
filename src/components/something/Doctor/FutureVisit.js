@@ -97,7 +97,6 @@ class FutureVisit extends React.Component {
 
 
     render() {
-        console.log(this.state.users)
         return (
             <>
                 {this.state.futureVisit.length === 0 ? <Page><Mess>Nie masz zaplanowanych wizyt</Mess> </Page> :

@@ -59,7 +59,6 @@ class Szczegoly extends React.Component {
     render() {
 
         const { data, godzina, lekarz, placówka, komentarz } = this.props.location.aboutProps
-        console.log(komentarz)
 
 
         return (

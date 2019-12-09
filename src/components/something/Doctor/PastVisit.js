@@ -21,6 +21,7 @@ height:7%;
 margin-top:15px
 box-shadow: 1.5px 2.9px 0px 0px #d6d6d6;
 padding: 15px;
+overflow: auto;
 `
 const LoggenInAstyle = styled.div`
 font-size: 1.7rem;

@@ -1,0 +1,45 @@
+.imageWrapper {
+    position: relative;
+    width: 45vh;
+    height: 30vh;
+    margin:10px;
+}
+.imageWrapper img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius:5px;
+
+}
+.imageWrapper .cornerLink {
+    font-weight: 800;
+    opacity: 0;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    padding: 1rem;
+    color: #ffffff;
+    background: linear-gradient(to top,rgba(0,0,0,0.6),transparent);
+    letter-spacing: 0.2rem;
+    text-decoration: none;
+    text-align: center;
+    font-size:1.5rem;
+    -webkit-transition: opacity 500ms;
+    -moz-transition: opacity 500ms;
+    -o-transition: opacity 500ms;
+    transition: opacity 500ms;
+    
+}
+.imageWrapper:hover .cornerLink {
+    opacity: 1;
+}
+
+.imageWrapper:hover  {
+    opacity: 0.8;
+    -webkit-transition: opacity 500ms;
+    -moz-transition: opacity 500ms;
+    -o-transition: opacity 500ms;
+    transition: opacity 500ms;
+    
+}

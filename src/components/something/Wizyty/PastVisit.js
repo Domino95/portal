@@ -73,6 +73,12 @@ width: 20%;
 color: #00a271;`
 
 
+const ElementNoVisit = styled.h2`
+display: flex;
+font-size: 1.5rem;
+width: 100%;
+padding: 10px 20px 10px 6px;`
+
 
 
 
@@ -90,9 +96,9 @@ const PastVisits = (props) => {
                 {props.pastVisits.length === 0 ?
                     <Page>
                         <OneElement>
-                            <Element>
-                                Nie odbyłeś jeszcze żadnych wizyt w naszych placówkach.
-                        </Element>
+                            <ElementNoVisit>
+                                Nie odbyłeś jeszcze żadnych wizyt w naszych placówkach
+                        </ElementNoVisit>
                         </OneElement>
                     </Page> :
 
