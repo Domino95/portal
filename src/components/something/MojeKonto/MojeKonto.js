@@ -125,7 +125,7 @@ class MojeKonto extends React.Component {
 
                         <Lables htmlFor="name">Twoję imię i nazwisko
             <IpnutStyled type="text" id="name" name='username' value={this.state.username}
-                                onChange={this.handleChange}
+                                onChange={this.handleChange} disabled
                             ></IpnutStyled>
                         </Lables>
 

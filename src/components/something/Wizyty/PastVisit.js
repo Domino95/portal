@@ -24,7 +24,7 @@ margin-bottom:10px;`
 
 const FrameScroll = styled.div`
 overflow: auto;
-height: 18vh;
+max-height: 18vh;
 
 `
 

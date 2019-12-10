@@ -30,19 +30,22 @@ padding: 5px;`
 
 const Mess = styled.div`
 font-size: 1.3rem;
-
 `
-
+const FilterDay = styled.input`
+position:absolute;
+right: 14%;
+top: 27%;
+`
 
 class PastVisits extends React.Component {
 
     state = {
         wizyty: [],
-        futureVisit: [],
         pastVisit: [],
-        currentVisit: [],
         currentdoctor: '',
-        users: []
+        users: [],
+        date: new Date().toISOString().slice(0, 10),
+
     }
 
     componentWillMount() {
@@ -71,16 +74,17 @@ class PastVisits extends React.Component {
             const value = snapshot.val()
             const filterdoctor = value.Rezerwacje.rezerwacje.filter(item => item.lekarz === this.state.currentdoctor)
 
-            const pastVisit = []
+            const wizyty = []
 
             filterdoctor.map(item => {
                 if (new Date().toISOString().slice(0, 10) > item.data)
-                    pastVisit.push(item)
+                    wizyty.push(item)
                 else if (new Date().toISOString().slice(0, 10) === item.data && new Date().getHours() > item.godzina.slice(0, 2))
-                    pastVisit.push(item)
+                    wizyty.push(item)
                 return item
             })
-            this.setState({ pastVisit })
+            let filterVisit = wizyty.filter(item => item.data === this.state.date)
+            this.setState({ wizyty, pastVisit: filterVisit })
 
         })
 
@@ -91,11 +95,21 @@ class PastVisits extends React.Component {
         return find[1].displayName
     }
 
-
+    handleSelect = (e) => {
+        let filterVisit = this.state.wizyty.filter(item => item.data === e.target.value)
+        this.setState({ [e.target.id]: e.target.value, pastVisit: filterVisit });
+        console.log(this.state.pastVisit)
+    }
 
     render() {
         return (
             <>
+                <FilterDay id="date"
+                    type="date"
+                    value={this.state.date}
+                    max="2020-04-07"
+                    onChange={this.handleSelect} />
+
                 {this.state.pastVisit.length === 0 ? <Page><Mess>Nie masz odbytych wizyt</Mess> </Page> :
                     this.state.pastVisit.map(item => (
                         <Page key={Math.random(10000000000)}>

@@ -34,7 +34,7 @@ class AuthPage extends Component {
     return (
       <PageStyle>
         <ContentWrapper>
-          <h3>Portal Pacjenta</h3>
+          <h2>Portal Pacjenta</h2>
           <MessageToUser messageToUser={messageToUser} />
           <AuthForm
             sendMessageToUser={this.sendMessageToUser}

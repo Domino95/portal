@@ -17,7 +17,7 @@ padding-right:20px;
 padding-top: 20px;
 margin-top:10px;
 box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-
+border-radius:5px;
 `
 
 

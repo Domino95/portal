@@ -20,8 +20,6 @@ padding: 20px;
 outline: none; 
 resize: none;
 border: 3px solid #00a271;
-
-
 `
 const Button = styled.button`
 width: 145px;

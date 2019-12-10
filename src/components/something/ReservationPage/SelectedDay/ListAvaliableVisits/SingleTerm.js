@@ -82,7 +82,7 @@ class SingleTerm extends React.Component {
             }
         )
         alert("Rezerwacja dodana pomyslnie!")
-        console.log(this.state.rezerwacje.length)
+        console.log(this.state.rezerwacje.length, this.props.firebase.getCurrentEmail())
 
     }
 

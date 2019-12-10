@@ -5,8 +5,6 @@ export const Wrapper = styled.p`
   display: flex;
   justify-content: space-around;
   align-items: center;
-  /* background-color: red; */
-  font-size: 0.8rem;
 `;
 export const ChangerStyle = styled.button`
   background-color: transparent;
@@ -15,6 +13,7 @@ export const ChangerStyle = styled.button`
   cursor: pointer;
   overflow: hidden;
   position: relative;
+  font-size:0.8rem;
   &::after {
     content: "";
     position: absolute;

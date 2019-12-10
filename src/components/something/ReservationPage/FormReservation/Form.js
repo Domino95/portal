@@ -9,7 +9,7 @@ import Inputs from './Inputs'
 
 const FormStyle = styled.div`
 width: 100%;
-border-radius:10px;
+border-radius:5px;
 height: 10%;
 align-items: center;
 justify-content: center;
@@ -17,7 +17,6 @@ display: flex;
 padding: 15px;
 box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 background-image: linear-gradient(315deg, #00a271 0, #bbdbbe 74%);
-border: 1px solid #ddd;
 `
 
 

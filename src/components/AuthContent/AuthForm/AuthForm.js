@@ -109,7 +109,7 @@ class AuthForm extends React.Component {
                 displayName,
                 phoneNumber: '',
                 pesel: '',
-                email,
+                email: email.toLowerCase()
               });
           })
           .then(() => {
