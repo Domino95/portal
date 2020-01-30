@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/portal/static/css/main.ce5953a5.chunk.css",
+    "main.js": "/portal/static/js/main.7db166f3.chunk.js",
+    "main.js.map": "/portal/static/js/main.7db166f3.chunk.js.map",
+    "runtime~main.js": "/portal/static/js/runtime~main.3c49a560.js",
+    "runtime~main.js.map": "/portal/static/js/runtime~main.3c49a560.js.map",
+    "static/js/2.e9dd74b9.chunk.js": "/portal/static/js/2.e9dd74b9.chunk.js",
+    "static/js/2.e9dd74b9.chunk.js.map": "/portal/static/js/2.e9dd74b9.chunk.js.map",
+    "index.html": "/portal/index.html",
+    "precache-manifest.a6134411e66961794a82d33134d4483d.js": "/portal/precache-manifest.a6134411e66961794a82d33134d4483d.js",
+    "service-worker.js": "/portal/service-worker.js",
+    "static/css/main.ce5953a5.chunk.css.map": "/portal/static/css/main.ce5953a5.chunk.css.map",
+    "static/media/astma.png": "/portal/static/media/astma.d9a6e795.png",
+    "static/media/brzuch.jpeg": "/portal/static/media/brzuch.8b571770.jpeg",
+    "static/media/kostka.jpg": "/portal/static/media/kostka.509cfb95.jpg",
+    "static/media/przeziebienie.jpeg": "/portal/static/media/przeziebienie.4ad33aa1.jpeg"
+  }
+}
