@@ -21,58 +21,68 @@ const WrapperMain = styled.div`
 `
 
 
-const UserPage = (props) => {
-  const [user, setUser] = useState({})
+class UserPage extends React.Component {
+
+  state = {
+    user: ""
+  };
 
 
-  useEffect(() => {
-    props.firebase.db.ref(`users/${props.firebase.getCurrentInfoUser().uid}`).on('value', snapshot => {
+  componentDidMount() {
+    this.props.firebase.db.ref(`users/${this.props.firebase.getCurrentInfoUser().uid}`).on('value', snapshot => {
       const value = snapshot.val()
       const currentUser = value
-      setUser(currentUser)
+      this.setState({ user: currentUser })
     })
-  }, []);
+  };
 
-
-  if (user.sekretariat) {
-    return (
-
-      <Router>
-        <Redirect to="/sekretariat" />
-        < WrapperMain >
-          <Header LogOutFunctions={props.LogOutFunctions} />
-          <Component />
-        </WrapperMain >
-      </Router>
-
-    )
+  componentWillUnmount() {
+    this.props.LogOutFunctions()
   }
 
-  if (user.doctor) {
+
+  render() {
+
+
+    if (this.state.user.sekretariat) {
+      return (
+
+        <Router>
+          <Redirect to="/sekretariat" />
+          < WrapperMain >
+            <Header LogOutFunctions={this.props.LogOutFunctions} />
+            <Component />
+          </WrapperMain >
+        </Router>
+
+      )
+    }
+
+    if (this.state.user.doctor) {
+      return (
+        <Router>
+          <Redirect to="/doctor" />
+          < WrapperMain >
+            <Header LogOutFunctions={this.props.LogOutFunctions} />
+            <Component />
+          </WrapperMain >
+        </Router>
+      )
+    }
+
     return (
-      <Router>
-        <Redirect to="/doctor" />
-        < WrapperMain >
-          <Header LogOutFunctions={props.LogOutFunctions} />
-          <Component />
-        </WrapperMain >
-      </Router>
-    )
+
+      < WrapperMain >
+        <Header LogOutFunctions={this.props.LogOutFunctions} />
+        <Navigation />
+        <Component />
+      </WrapperMain >
+    );
+
+
+
+
   }
-
-  return (
-
-    < WrapperMain >
-      <Header LogOutFunctions={props.LogOutFunctions} />
-      <Navigation />
-      <Component />
-    </WrapperMain >
-  );
-
-
-
-
-
 };
 
 export default withRouter(withFirebase(UserPage));
