@@ -90,6 +90,7 @@ const Articles = () => {
             
            <H2> Maść rozgrzewająca na przeziębienie</H2>
             Maść rozgrzewającą stosuje się przede wszystkim w celu złagodzenia kataru i kaszlu. Wciera się w klatkę piersiową i plecy kilka razy dziennie. Warto wybierać maści zawierające ekstrakt z eukaliptusa i mentolu.
+            <p>Źródło: https://ktomalek.pl/blog/czym-rozni-sie-grypa-od-przeziebienia/w-223 </p>
 
         </Article>
         :null}
@@ -146,6 +147,7 @@ Jeżeli nie potrafisz znaleźć potrzebnego leku, skorzystaj z wygodnej i intuic
 Farmakoterapia nie przyniesie rezultatów bez zmiany stylu życia. Palenie przy tej chorobie jest całkowicie zabronione. Ważne jest też unikanie kontaktu z czynnikami, które wywołują zaostrzenia astmy oskrzelowej. Dotyczy to przede wszystkim chorych, u których astma ma podłoże alergiczne. Część badań wskazuje, że otyłość może być czynnikiem wyzwalającym astmę oraz utrudniającym kontrolę tej choroby. Dlatego prócz przyjmowania leków należy zmienić dietę na zdrowszą i odpowiednio zbilansowaną, aby kontrolować masę ciała.
 
 W celu uzupełnienia kuracji wziewnymi glikokortykosterydami warto zastosować suplementy diety wzmacniające organizm poprzez zwiększenie odporności. Na rynku aptecznym dostępne są nowoczesne, wieloskładnikowe preparaty, których substancje aktywne pomagają w utrzymaniu prawidłowego stanu błon śluzowych (w tym błon śluzowych w płucach) np. AdCort.
+<p>Źródło: https://ktomalek.pl/blog/domowe-sposoby-na-przeziebienie-naprawde-skuteczne/w-252 </p>
         </Article> : null}
 
 
@@ -192,6 +194,8 @@ Ból brzucha możemy próbować łagodzić na własną rękę, o ile nie podejrz
 Jeżeli przyczyną dyskomfortu jest niestrawność, pomocne mogą się okazać napary z ziół zwiększających wydzielanie soków trawiennych i działających rozkurczowo na mięśnie układu pokarmowego, takich jak: koszyczek rumianku, mięta pieprzowa, korzeń mniszka, koper włoski. Rozluźniająco na brzuch zadziała też ciepły okład i leżenie w pozycji z podkurczonymi nogami. Warto również sięgnąć po siemię lniane znane przede wszystkim z dobroczynnego działania w chorobie wrzodowej. Zawarte w nasionach śluzy powlekają błony śluzowe przełyku, żołądka i częściowo dwunastnicy, chroniąc je przed agresywnym działaniem  kwasu solnego.
 
 Jeśli mimo podjętych działań ból nadal się utrzymuje lub nasila i występują inne, niepokojące objawy, takie jak: podwyższona temperatura, nudności i wymioty, krew w stolcu, zatrzymanie stolca oraz ból, który uniemożliwia sen, należy skonsultować się z lekarzem.
+<p>Źródło: https://ktomalek.pl/blog/co-moze-oznaczac-bol-brzucha/w-528 </p>
+
 </Article> : null }
 
 {article === "noga" ? 
@@ -210,6 +214,8 @@ Dwa kolejne stopnie skręcenia stawu skokowego związane są z poważniejszymi u
 Zwichnięcie stawu skokowego często mylone jest z jego skręceniem. Zwichnięcie jest jednak znacznie poważniejszym urazem, związanym nie tylko z nadwyrężeniem elementów stawu, ale z przemieszczeniem struktur stawowych względem siebie. Zwichnięcie wymaga zazwyczaj interwencji chirurga, a później rehabilitanta. Niektóre z objawów zwichnięcia mogą być podobne do skręcenia kostki: opuchlizna, krwiaki, sińce. Dla zwichnięć charakterystyczne są przede wszystkim zniekształcenia, które wiążą się z przesunięciem kości względem siebie oraz silny ból, nawet w trakcie spoczynku. W przypadku podejrzenia zwichnięcia należy jak najszybciej udać się do ortopedy.
 
 Należy pamiętać, że każdy źle leczony uraz stawu skokowego może wiązać się z późniejszymi problemami i koniecznością leczenia chirurgicznego. Jeżeli po urazie zauważasz u siebie niepokojące objawy ze strony narządu ruchu jak opuchnięcie czy krwiaki zapraszamy na konsultacje ortopedyczne do naszego Centrum Medycznego. Doświadczenie naszych lekarzy ortopedów i najnowocześniejszy sprzęt umożliwią właściwą diagnozę i wdrożenie odpowiedniego leczenia.
+<p>Źródło: https://dpmed.pl/blog/jak-rozpoznac-skrecenie-stawu-skokowego-i-jak-postepowac/ </p>
+
 </Article>: null }
 
 

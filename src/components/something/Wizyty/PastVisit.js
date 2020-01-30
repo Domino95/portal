@@ -25,6 +25,7 @@ margin-bottom:10px;`
 const FrameScroll = styled.div`
 overflow: auto;
 max-height: 18vh;
+padding-bottom:3px;
 
 `
 
@@ -90,7 +91,7 @@ const PastVisits = (props) => {
 
         <>
             <Frame>
-                <Text>Odbyte Wizyty:</Text>
+                <Text>Odbyte Wizyty</Text>
 
 
                 {props.pastVisits.length === 0 ?
@@ -113,7 +114,7 @@ const PastVisits = (props) => {
                                     <Element> {item.lekarz}</Element>
                                     <Element>{item.placówka} </Element>
                                     <NavLink to={{
-                                        pathname: '/wizyty/szczegoly',
+                                        pathname: '/user/wizyty/szczegoly',
                                         aboutProps: {
                                             godzina: item.godzina,
                                             data: item.data,

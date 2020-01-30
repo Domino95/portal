@@ -1,13 +1,13 @@
 export const login = "/login";
-export const user = "/";
-export const wizyty = "/wizyty";
-export const konto = "/konto";
-export const artykuly = "/artykuly";
-export const rezerwacja = "/rezerwacja"
-export const szczegoly = "/wizyty/szczegoly";
+export const user = "/user";
+export const wizyty = "/user/wizyty";
+export const konto = "/user/konto";
+export const artykuly = "/user/artykuly";
+export const rezerwacja = "/user/rezerwacja"
+export const szczegoly = "/user/wizyty/szczegoly";
 export const sekretariat = "/sekretariat"
-export const futureVisit = "/doctor/futureVisit"
-export const pastVisit = "/doctor/pastVisit"
-export const currentVisit = "/doctor/currentVisit"
+export const futureVisit = "/doctor/przyszleWizyty"
+export const pastVisit = "/doctor/przeszleWizyty"
+export const currentVisit = "/doctor/obecnaWizyta"
 
 

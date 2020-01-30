@@ -9,7 +9,7 @@ import {
   REGISTER_TYPE,
   inputs_incorrect,
   email_incorrect,
-  no_user_in_base,
+  nick_or_password_incorrect,
   password_length_incorrect,
   repassword_incorrect,
   user_already_registered,
@@ -82,7 +82,7 @@ class AuthForm extends React.Component {
         })
         .catch(err => {
           console.log(err);
-          this.props.sendMessageToUser(no_user_in_base);
+          this.props.sendMessageToUser(nick_or_password_incorrect);
         });
       this.props.firebase.setSession()
 

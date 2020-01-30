@@ -29,7 +29,7 @@ font-size: 1.2rem;
 `
 
 const IpnutStyled = styled.input`
-font-size: 15px;
+font-size: 18px;
 padding: 10px;
 margin-left: 5px;
 width: 30%;
@@ -160,4 +160,4 @@ class MojeKonto extends React.Component {
 export default withFirebase(MojeKonto);
 
 
-//this.state.infoUser.l
+

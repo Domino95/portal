@@ -8,7 +8,7 @@ export const inputs_incorrect = "Uzupełnij wszystkie pola";
 export const email_incorrect = "Adres email musi posiadać @";
 export const password_length_incorrect = "Hasło musi mieć co najmniej 8 znaków";
 export const repassword_incorrect = "Hasła muszą być takie same";
-export const no_user_in_base = "W bazie nie ma takiego użytkownika";
+export const nick_or_password_incorrect = "Podany login lub haslo jest niepoprawne";
 export const user_already_registered = "Podany email jest już w użyciu";
 export const no_name_and_surname = "Uzupełnij swoje dane";
 
