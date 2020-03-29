@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/portal/static/css/main.ce5953a5.chunk.css",
-    "main.js": "/portal/static/js/main.71355c14.chunk.js",
-    "main.js.map": "/portal/static/js/main.71355c14.chunk.js.map",
+    "main.js": "/portal/static/js/main.5088f00b.chunk.js",
+    "main.js.map": "/portal/static/js/main.5088f00b.chunk.js.map",
     "runtime~main.js": "/portal/static/js/runtime~main.3c49a560.js",
     "runtime~main.js.map": "/portal/static/js/runtime~main.3c49a560.js.map",
     "static/js/2.db5ca0f5.chunk.js": "/portal/static/js/2.db5ca0f5.chunk.js",
     "static/js/2.db5ca0f5.chunk.js.map": "/portal/static/js/2.db5ca0f5.chunk.js.map",
     "index.html": "/portal/index.html",
-    "precache-manifest.657d3f9d071b67921952ecd3b7237b75.js": "/portal/precache-manifest.657d3f9d071b67921952ecd3b7237b75.js",
+    "precache-manifest.1d2cb02d6e59c00c03e2e2d3ba938e96.js": "/portal/precache-manifest.1d2cb02d6e59c00c03e2e2d3ba938e96.js",
     "service-worker.js": "/portal/service-worker.js",
     "static/css/main.ce5953a5.chunk.css.map": "/portal/static/css/main.ce5953a5.chunk.css.map",
     "static/media/astma.png": "/portal/static/media/astma.d9a6e795.png",
