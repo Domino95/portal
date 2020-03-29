@@ -8,12 +8,7 @@ import { withFirebase } from "../../../../Firebase";
 
 const SelectedDayStyle = styled.div`
 `
-
-
-
 class SelectedDay extends React.Component {
-
-
     state = {
         terminy: [
             {
@@ -129,19 +124,14 @@ class SelectedDay extends React.Component {
                                         institutions={selectedplacowka}
                                         czyZarezerwowane={item.czyZarezerwowane}
                                     />
-
                                 ))}
-
                         </ul>
-
                     </SelectedDayStyle >
                 }
             </>
         )
     }
 }
-
-
 export default withFirebase(SelectedDay);
 
 

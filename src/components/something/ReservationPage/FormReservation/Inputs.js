@@ -2,7 +2,7 @@ import React from 'react';
 import styled from "styled-components";
 
 const InputStyle = styled.select`
-  font-size: 15px;
+  font-size: 13px;
   padding: 10px;
   height: 40px;
   margin-right: 20px;
@@ -11,14 +11,12 @@ const InputStyle = styled.select`
   border-radius: 5px;
   box-shadow: 0 0 3px inset black;
   background-color: #fff;;
-  
   &::placeholder {
     font-size: 0.8rem;
   }
- 
 `
 const InputData = styled.input`
-  font-size: 15px;
+  font-size: 13px;
   padding: 10px;
   height: 40px;
   margin-right: 20px;
@@ -27,14 +25,10 @@ const InputData = styled.input`
   border-radius: 5px;
   box-shadow: 0 0 3px inset black;
   background-color: #fff;
-  
   &::placeholder {
     font-size: 0.8rem;
   }
- 
 `
-
-
 const Inputs = ({
   handleSelect,
   doctors,

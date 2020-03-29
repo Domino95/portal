@@ -32,7 +32,7 @@ const InputsWithLabels = ({
       id: 1,
       value: email,
       name: EMAIL,
-      placeholder: "Username",
+      placeholder: "Email",
       icon: "fas fa-user"
     },
     {

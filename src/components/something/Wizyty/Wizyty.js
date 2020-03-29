@@ -16,12 +16,10 @@ const FrameScroll = styled.div`
 overflow: auto;
 max-height: 26vh;
 padding-bottom:3px;
-
 `
-
 const Text = styled.a`
 width:100%;
-font-size: 1.8rem;
+font-size: 1.2rem;
 letter-spacing: 3px;
 padding: 20px 0 5px 5px;
 letter-spacing:1.1px;
@@ -43,7 +41,6 @@ display: flex;
 width: 100%;
 align-items: baseline;
 font-size: 1.5rem;
-
 `
 
 
@@ -54,23 +51,16 @@ class Wizyty extends React.Component {
         currentuser: '',
         pastVisit: [],
         futureVisit: []
-
     }
-
     componentDidMount() {
         this.props.firebase.Form().on('value', snapshot => {
             const value = snapshot.val()
-
             const currentuser = this.props.firebase.getCurrentEmail()
-
             const wizyty = value.Rezerwacje.rezerwacje.filter(function (user) {
                 return user.user === currentuser
             })
-
-
             const pastVisit = []
             const futureVisit = []
-
             wizyty.map(item => {
                 if (new Date().toISOString().slice(0, 10) > item.data)
                     pastVisit.push(item)
@@ -79,13 +69,10 @@ class Wizyty extends React.Component {
                 else
                     futureVisit.push(item)
                 return item
-
-
             })
             var arr = [];
             for (let i = 0; i < futureVisit.length; i++)
                 arr.push(futureVisit[i])
-
             function compareFuture(a, b) {
                 if (parseInt(a.data.slice(-8)) === parseInt(b.data.slice(-8))) {
                     if (parseInt(a.data.slice(5, -3)) === parseInt(b.data.slice(5, -3))) {
@@ -98,12 +85,9 @@ class Wizyty extends React.Component {
                 return (parseInt(a.data.slice(-8)) - parseInt(b.data.slice(-8)))
             }
             arr.sort(compareFuture);
-
-
             var pastarr = [];
             for (let i = 0; i < pastVisit.length; i++)
                 pastarr.push(pastVisit[i])
-
             function comparePast(a, b) {
                 if (parseInt(b.data.slice(-8)) === parseInt(a.data.slice(-8))) {
                     if (parseInt(b.data.slice(5, -3)) === parseInt(a.data.slice(5, -3))) {
@@ -117,7 +101,6 @@ class Wizyty extends React.Component {
             }
             pastarr.sort(comparePast);
 
-
             this.setState({
                 pastVisit: pastarr,
                 futureVisit: arr,
@@ -125,17 +108,10 @@ class Wizyty extends React.Component {
                 wizytyAll: value.Rezerwacje.rezerwacje,
                 currentuser: this.props.firebase.getCurrentEmail()
             })
-
-
         }
         )
     }
-
-
-
     render() {
-
-
         return (
             <>
                 <Frame>

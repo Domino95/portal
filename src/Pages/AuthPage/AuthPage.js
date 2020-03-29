@@ -34,7 +34,7 @@ class AuthPage extends Component {
     return (
       <PageStyle>
         <ContentWrapper>
-          <h2>Portal Pacjenta</h2>
+          <h2 style={{ marginTop: "10px", marginBottom: "10px" }}>Portal Pacjenta</h2>
           <MessageToUser messageToUser={messageToUser} />
           <AuthForm
             sendMessageToUser={this.sendMessageToUser}

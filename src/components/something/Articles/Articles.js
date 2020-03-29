@@ -6,23 +6,20 @@ import brzuch from './brzuch.jpeg';
 import kostka from './kostka.jpg';
 import przeziebienie from './przeziebienie.jpeg';
 import { useState } from "react";
-
-
-
 const Conatiner = styled.div`
-max-width: 100%;
+width: 80%;
 display: flex;
   flex-wrap: wrap;
   justify-content: center;
   margin-bottom:10%;
+  margin: 0 auto 0 auto;
 `
-
 const Article = styled.span`
 margin-left:auto;
 margin-right:auto;
 display:block;
 width: 80%;
-font-size: 1.1rem;
+font-size: 0.8rem;
 padding:10px;
 line-height: 1.5;
 vertical-align: baseline;
@@ -31,76 +28,73 @@ font-weight: 400;
 font-family: "Open Sans", Arial, sans-serif !important;
 margin-bottom:5%;
 `
-
 const H2 = styled.h2`
-font-size:2rem;
+font-size:1rem;
 font-weight: 700;
     margin: 1.25em 0 .75em;
     padding: 0;
     color:black;
 `
-
-
 const Articles = () => {
     const [article, setArticle] = useState({})
-  
+
     return (
-        
+
         <>
-        <Conatiner>
+            <Conatiner>
 
-            <div className="imageWrapper"  >
-                <img src={przeziebienie} alt=""  />
-                <a  onClick={()=> {setArticle('przeziebienie')}} href="#przeziebienie" className="cornerLink" >PRZEZIĘBIENIA</a>
-            </div>
-            <div className="imageWrapper">
-                <img src={astma} alt="" />
-                <a onClick={()=> {setArticle('astma')}} href="#astma" className="cornerLink">ASTMA</a>
-            </div>
-            <div className="imageWrapper">
-                <img src={brzuch} alt="" />
-                <a onClick={()=> {setArticle('brzuch')}} href="#brzuch" className="cornerLink">BÓL BRZUCHA</a>
-            </div>
-            <div className="imageWrapper">
-                <img src={kostka} alt="" />
-                <a onClick={()=> {setArticle('noga')}}  href="#noga" className="cornerLink">SKRĘCENIA</a>
-            </div>
-        </Conatiner >
+                <div className="imageWrapper"  >
+                    <img src={przeziebienie} alt="" />
+                    <a style={{ fontSize: "1rem" }} onClick={() => { setArticle('przeziebienie') }} href="#przeziebienie" className="cornerLink" >PRZEZIĘBIENIA</a>
+                </div>
+                <div className="imageWrapper">
+                    <img src={astma} alt="" />
+                    <a style={{ fontSize: "1rem" }} onClick={() => { setArticle('astma') }} href="#astma" className="cornerLink">ASTMA</a>
+                </div>
+                <div className="imageWrapper">
+                    <img src={brzuch} alt="" />
+                    <a style={{ fontSize: "1rem" }} onClick={() => { setArticle('brzuch') }} href="#brzuch" className="cornerLink">BÓL BRZUCHA</a>
+                </div>
+                <div className="imageWrapper">
+                    <img src={kostka} alt="" />
+                    <a style={{ fontSize: "1rem" }} onClick={() => { setArticle('noga') }} href="#noga" className="cornerLink">SKRĘCENIA</a>
+                </div>
+            </Conatiner >
 
 
-        {article === "przeziebienie" ? 
-        <Article id="przeziebienie">  
-            <H2>Jak odróżnić grypę od przeziębienia?</H2>
+            {article === "przeziebienie" ?
+                <Article id="przeziebienie">
+                    <H2>Jak odróżnić grypę od przeziębienia?</H2>
             Zanim zdecydujemy o tym, czy powinniśmy udać się do lekarza, musimy znać różnicę między objawami grypy i przeziębienia. W przypadku grypy mamy do czynienia przede wszystkim z wysoką gorączką, bólami mięśni i stawów, w także tak zwanym uczuciem rozbicia. Inaczej objawia się przeziębienie. Przede wszystkim rozwija się znacznie wolniej niż grypa. Jego przebieg jest też łagodniejszy, a gorączka niezbyt wysoka. Bardzo często ma związek z pogodą, więc możemy mieć z nim do czynienia nawet latem w czasie kilku chłodniejszych dni.
-            
+
             <H2>Domowe sposoby na przeziębienie – kiedy mogą okazać się skuteczne?</H2>
             O domowych sposobach na przeziębieniach możemy usłyszeć na każdym kroku, gdy zbliża się okres zimowy lub jesienny. Częste zmiany temperatury w lecie mogą być dla nas jednak również groźne. Początkowe objawy przeziębienia mogą zostać przez nas zlekceważone z powodu pory roku, a to właśnie wtedy domowe sposoby mogą okazać się najskuteczniejsze. Jeśli pozwolimy się rozwinąć infekcji lub jeśli dopadnie nas grypa koniecznie musimy udać się lekarza.
-            
+
            <H2> Jakie są najczęściej stosowane sposoby na przeziębienie?</H2>
             Najczęściej mamy do czynienia oczywiście z herbatą z sokiem malinowym lub mlekiem z czosnkiem, a także rosołem. Często stosowane są również maści rozgrzewające. Przyjrzyjmy się tym metodom i sprawdźmy, dlaczego są one skuteczne w leczeniu początkowych objawów przeziębienia.
-            
+
             <H2>Herbata z imbirem lub sokiem malinowym</H2>
             Po taki napój sięgamy nie bez powodu. Sok z malin charakteryzuje się właściwościami przeciwgorączkowymi, a imbir działa przeciwzapalnie. Jak przygotować taką herbatę, by była najskuteczniejsza? Obierz imbir i pokrój go w drobne plasterki, następnie zalej gorącą herbatą. Przykryj szklankę i pozostaw całość na 15. Następnie dodaj sok malinowy i wymieszaj dokładnie. Możesz również dodać cytrynę i miód.
-            
+
             <H2> Rosół na przeziębienie </H2>
             Rosół na przeziębienie? Czy nie brzmi to jak mit? Badacze z University of Nebrasca Medical Center postanowili rozwiązać tę zagadkę. Grupa pijąca bulion czuła się znacznie lepiej niż ta, która go nie spożywała. Czy to znaczy, że rosół to lekarstwo na przeziębienie. Okazuje się, że nie do końca. Nie leczy on infekcji, ale poprawia nam nastrój. Wszystko za sprawą karmozyny, którą posiada w swoim składzie.
-            
+
             <H2>Mleko z miodem lub czosnkiem na przeziębienie</H2>
             Nie każdy jest fanem tego połączenia smaków, jednak trudno odmówić skuteczność tej metodzie. Czosnek jest uznawany za naturalny antybiotyk ze względu na swoje właściwości przeciwzapalne i przeciwwirusowe. Miód również charakteryzuje się podobnymi właściwościami, a ponadto łagodzi kaszel i ból gardła. Więcej o tych domowych sposobów na przeziębienie znajdziesz na: http://pelavo.pl/naturalne-sposoby-na-przeziebienie-i-grype.html .
-            
+
            <H2> Maść rozgrzewająca na przeziębienie</H2>
             Maść rozgrzewającą stosuje się przede wszystkim w celu złagodzenia kataru i kaszlu. Wciera się w klatkę piersiową i plecy kilka razy dziennie. Warto wybierać maści zawierające ekstrakt z eukaliptusa i mentolu.
             <p>Źródło: https://ktomalek.pl/blog/czym-rozni-sie-grypa-od-przeziebienia/w-223 </p>
 
-        </Article>
-        :null}
+                </Article>
+                : null}
 
 
 
 
-{article === "astma" ? 
-        <Article id="astma">
-     <H2>Główne objawy astmy</H2>
+            {article === "astma" ?
+                <Article id="astma">
+                    <H2>Główne objawy astmy</H2>
 Objawy astmy możemy podzielić na podmiotowe i przedmiotowe. Te pierwsze to symptomy, które odczuwa pacjent i jest w stanie je opisać. Należą do nich:
 
 kaszel - dominujący objaw astmy, zwłaszcza w astmie dziecięcej. Suchy i męczący kaszel często występuje w nocy lub po bardziej intensywnym wysiłku. W trakcie ataku kaszlu może wydzielać się trudna do wykrztuszenia plwocina,
@@ -108,8 +102,8 @@ kaszel - dominujący objaw astmy, zwłaszcza w astmie dziecięcej. Suchy i męcz
 duszności - występują wraz z kaszlem i świszczącym oddechem. Mogą pojawić się nad ranem lub w nocy, przebiegają z różnym natężeniem,
 obniżona wydolność wysiłkowa - zadyszka po wejściu po schodach, czy innym niewielkim wysiłku to pierwszy dostrzegalny objaw.
 Powyższym objawom towarzyszyć może uczucie niepokoju. Osoby zmagające się z nocnymi napadami astmy rzadko się wysypiają, przez co stają się senne i rozdrażnione. Wspomniano wcześniej, że astma przeważnie miewa podłoże alergiczne, stąd wielu astmatyków uskarża się na symptomy alergii, takie jak: alergiczny nieżyt nosa, alergiczne zapalenie spojówek. Nierzadko astmatycy chorują na atopowe zapalenie skóry.
-     
-       <H2>Na czym polega astma oskrzelowa? </H2> 
+
+       <H2>Na czym polega astma oskrzelowa? </H2>
 Astma oskrzelowa (gr. asthma oznaczające zadyszkę), nazywana też dychawicą oskrzelową, jest przewlekłą chorobą zapalną atakującą drogi oddechowe, w której uczestniczy wiele komórek i substancji przez nie uwalnianych. Na świecie na astmę może chorować ponad 300 milionów ludzi, a częstość występowania tego schorzenia z roku na rok rośnie. Choroba ma zmienny przebieg, a towarzyszą jej różnorodne i nawracające objawy. Charakteryzują ją trzy główne cechy:
 
 obturacja oskrzeli, która ustępuje spontanicznie lub pod wpływem leczenia
@@ -148,12 +142,12 @@ Farmakoterapia nie przyniesie rezultatów bez zmiany stylu życia. Palenie przy 
 
 W celu uzupełnienia kuracji wziewnymi glikokortykosterydami warto zastosować suplementy diety wzmacniające organizm poprzez zwiększenie odporności. Na rynku aptecznym dostępne są nowoczesne, wieloskładnikowe preparaty, których substancje aktywne pomagają w utrzymaniu prawidłowego stanu błon śluzowych (w tym błon śluzowych w płucach) np. AdCort.
 <p>Źródło: https://ktomalek.pl/blog/domowe-sposoby-na-przeziebienie-naprawde-skuteczne/w-252 </p>
-        </Article> : null}
+                </Article> : null}
 
 
-{article === "brzuch" ? 
-<Article id="brzuch"> 
-<H2>Ból brzucha – dobrze, że czasem boli</H2>
+            {article === "brzuch" ?
+                <Article id="brzuch">
+                    <H2>Ból brzucha – dobrze, że czasem boli</H2>
 Nie sposób polubić się z bólem brzucha, jednak warto mieć świadomość, że jest to ważny objaw z punktu widzenia diagnostyki. Ból, niezależnie od jego położenia, zmusza nas do odkrycia jego źródła, często choroby, która jest przyczyną nieprzyjemnych objawów.  Utrzymujący się ból brzucha może wskazywać na różne zaburzenia czynności układu pokarmowego lub choroby narządów jamy brzusznej. Pomocy najlepiej szukać u lekarza rodzinnego, który na podstawie badań i wywiadu medycznego podejmie leczenie lub skieruje nas na dalszą diagnostykę do specjalisty.
 
 
@@ -196,11 +190,11 @@ Jeżeli przyczyną dyskomfortu jest niestrawność, pomocne mogą się okazać n
 Jeśli mimo podjętych działań ból nadal się utrzymuje lub nasila i występują inne, niepokojące objawy, takie jak: podwyższona temperatura, nudności i wymioty, krew w stolcu, zatrzymanie stolca oraz ból, który uniemożliwia sen, należy skonsultować się z lekarzem.
 <p>Źródło: https://ktomalek.pl/blog/co-moze-oznaczac-bol-brzucha/w-528 </p>
 
-</Article> : null }
+                </Article> : null}
 
-{article === "noga" ? 
-<Article id="noga">
-<H2>Skręcenie stawu skokowego</H2>
+            {article === "noga" ?
+                <Article id="noga">
+                    <H2>Skręcenie stawu skokowego</H2>
 Nazywane również skręceniem kostki, należy do najczęstszych urazów ortopedycznych. Według statystyk rocznie dochodzi do około 350 tys. wypadków tego typu. Najczęściej występują one u sportowców – jeżeli biegasz pewnie nie raz zdarzyło Ci się krzywo stanąć i niebezpiecznie nadwyrężyć kostkę. Takie wykręcenie, w zależności od siły, może spowodować różne uszkodzenia stawu skokowego.
 
 <H2>Stopnie skręcenia stawu – jak rozpoznać i jakie podjąć działania? </H2>
@@ -216,16 +210,16 @@ Zwichnięcie stawu skokowego często mylone jest z jego skręceniem. Zwichnięci
 Należy pamiętać, że każdy źle leczony uraz stawu skokowego może wiązać się z późniejszymi problemami i koniecznością leczenia chirurgicznego. Jeżeli po urazie zauważasz u siebie niepokojące objawy ze strony narządu ruchu jak opuchnięcie czy krwiaki zapraszamy na konsultacje ortopedyczne do naszego Centrum Medycznego. Doświadczenie naszych lekarzy ortopedów i najnowocześniejszy sprzęt umożliwią właściwą diagnozę i wdrożenie odpowiedniego leczenia.
 <p>Źródło: https://dpmed.pl/blog/jak-rozpoznac-skrecenie-stawu-skokowego-i-jak-postepowac/ </p>
 
-</Article>: null }
+                </Article> : null}
 
 
 
 
 
 
-</>
+        </>
     )
-} 
+}
 
 
 

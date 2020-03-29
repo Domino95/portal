@@ -115,6 +115,7 @@ class AuthForm extends React.Component {
           .then(() => {
             alert("Rezerwacja przebiegla pomyslnie!")
             this.props.changeFormType()
+            return sendMessageToUser();
           })
 
           .catch(err => {

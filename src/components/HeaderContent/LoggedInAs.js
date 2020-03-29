@@ -2,28 +2,21 @@ import React from 'react'
 import styled from 'styled-components';
 import { withFirebase } from "../../Firebase";
 
-
 const LoggenInAstyle = styled.div`
-font-size: 2rem;
+font-size: 1.8rem;
 color: black;
 padding: 5px ;
-
 `
 const H2Styled = styled.a`
-font-size: 1.2rem ;
-
+font-size: 1rem ;
 `
 const LoggeUser = styled.div`
 text-align:center;
 `
-
-
-
 class LoggenInAs extends React.Component {
     state = {
         currentuser: ''
     }
-
     componentDidMount() {
         this.props.firebase.db.ref(`users/${this.props.firebase.getCurrentInfoUser().uid}`).on('value', snapshot => {
             const value = snapshot.val()
@@ -33,9 +26,7 @@ class LoggenInAs extends React.Component {
             })
         })
     }
-
     render() {
-
         return (
             <>
                 <LoggeUser> <LoggenInAstyle className={"fas fa-user"} /> <H2Styled>{this.state.currentuser}</H2Styled> </LoggeUser>

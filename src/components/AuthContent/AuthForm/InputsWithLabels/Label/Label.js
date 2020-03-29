@@ -8,7 +8,6 @@ const LabelStyle = styled.label`
   align-items: center;
   width: 15%;
   font-size: 1.8rem;
-  /* background-color: #ddd; */
 `;
 
 const Label = ({ name, icon }) => {

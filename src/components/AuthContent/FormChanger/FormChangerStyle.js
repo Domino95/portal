@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.p`
-  flex-basis: 10%;
+  flex-basis: 20%;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -27,5 +27,10 @@ export const ChangerStyle = styled.button`
   }
   &:hover::after {
     transform: translateX(0%);
+  }
+  @media(max-width:1024px){
+    font-size: 10px
+  
+    
   }
 `;

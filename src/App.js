@@ -58,7 +58,7 @@ class App extends Component {
 
   LogOutFunctions = () => {
     this.props.firebase.doSignOut()
-    this.setState({ isLoggedIn: !this.state.isLoggedIn })
+    this.setState({ isLoggedIn: false })
   };
 
 

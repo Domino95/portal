@@ -1,9 +1,6 @@
 import React from 'react'
 import styled from 'styled-components';
 import { withFirebase } from "../../../Firebase";
-
-
-
 const Page = styled.div`
 width: 100%
 margin-top:15px
@@ -12,13 +9,10 @@ padding: 10px;
 background: #fff;
 border: 1px solid #ddd;
 `
-
-
-
 const ButtonStyled = styled.button`
-width: 145px;
-font-size: 1rem;
-height: 50px;
+width: 135px;
+font-size: 0.8rem;
+height: 45px;
 background: rgb(64, 64, 64);
 color: white;
 border: 5px solid white;
@@ -36,25 +30,18 @@ display: flex;
 width: 100%%;
 align-items: baseline;
 `
-
 const Element = styled.h2`
 display: flex;
-font-size: 1.5rem;
+font-size: 1rem;
 width: 20%;`
 
 const ElementHour = styled.h2`
 display: flex;
-font-size: 1.5rem;
+font-size: 1rem;
 width: 20%;
 color: #00a271;`
 
 class FutureVisits extends React.Component {
-
-
-
-
-
-
     deleteReservation = () => {
         const rezerwacje = this.props.wizytyAll
         const index = rezerwacje.findIndex(item =>
@@ -72,16 +59,9 @@ class FutureVisits extends React.Component {
         )
         alert("Rezerwacja pomyślnie usunięta!")
     }
-
-
-
-
-
     render() {
         const { hours, data, doctor, placówka } = this.props
-
         return (
-
             < Page >
 
                 <OneElement>
@@ -93,9 +73,6 @@ class FutureVisits extends React.Component {
 
                 </OneElement>
             </Page >
-
-
-
         );
     }
 }

@@ -5,8 +5,7 @@ const InputStyle = styled.input`
   font-size: 15px;
   padding: 10px;
   height: 100%;
-  /* background-color: red; */
-  width: 80%;
+  width: 70%;
   border: none;
   border-radius: 5px;
   box-shadow: 0 0 3px inset black;
@@ -15,6 +14,10 @@ const InputStyle = styled.input`
   }
   &:focus {
     background-color: #ddd;
+  }
+  @media(max-width:1024px){
+  
+    
   }
 `;
 

@@ -4,7 +4,7 @@ import { Wrapper, ChangerStyle } from "./FormChangerStyle";
 
 const FormChanger = ({ changeFormType, formType }) => {
   let firstMessage, buttonMessage;
-  
+
   if (formType === LOGIN_TYPE) {
     firstMessage = "Nie jesteś zarejestrowany?";
     buttonMessage = "Stwórz konto";

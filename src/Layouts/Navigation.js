@@ -2,24 +2,18 @@ import React from 'react'
 import styled from 'styled-components'
 import { NavLink } from 'react-router-dom'
 import { user, wizyty, konto, artykuly, rezerwacja } from '../routes/routes'
-
-
 const Nav = styled.div`
 height:100px;
 text-align: center;
-
-
-
 `
 const StyledLink = styled(NavLink)`
   color: black;
   text-decoration: none;
-  font-size: 25px;
+  font-size: 18px;
   margin: 15px;
   text-transform: uppercase;
   line-height: 100px;
   font-weight: normal;
-
   &:hover{
     color: #00a271;
     -webkit-transition: opacity 500ms;
@@ -27,13 +21,11 @@ const StyledLink = styled(NavLink)`
     -o-transition: opacity 500ms;
     transition: opacity 500ms;
 }
-
   &.active{
   font-weight: bold;
   color: #00a271;
-  font-size: 30px;
-
-
+  font-size: 24px;
+}
 }
 `
 

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Header from "../../Layouts/Header"
 import styled from "styled-components";
 import Navigation from "../../Layouts/Navigation"
@@ -17,10 +17,10 @@ const WrapperMain = styled.div`
   margin: auto;
   margin-bottom: 5px;
   height: 100%;
-
+  @media(max-width: 1024px){
+  width: 90%;
+  }
 `
-
-
 class UserPage extends React.Component {
 
   state = {
@@ -37,6 +37,7 @@ class UserPage extends React.Component {
   };
 
   componentWillUnmount() {
+    console.log("woek")
     this.props.LogOutFunctions()
   }
 

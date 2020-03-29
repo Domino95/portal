@@ -13,7 +13,6 @@ overflow: hidden;
 padding-bottom: 10px;
 padding-left: 20px;
 `
-
 const Frame = styled.div`
 margin-top:10px;
 background: #f4f5f6;
@@ -21,15 +20,14 @@ width:100%;
 margin-top:50px;
 padding: 15px;
 `
-
 const Lables = styled.label`
 display: block;
 margin-top:20px;
-font-size: 1.2rem;
+font-size: 1rem;
+margin-bottom:5px;
 `
-
 const IpnutStyled = styled.input`
-font-size: 18px;
+font-size: 14px;
 padding: 10px;
 margin-left: 5px;
 width: 30%;
@@ -45,12 +43,10 @@ box-shadow: 0 0 3px inset black;
   background-color: #ddd;
 }
 `
-
-
 const UpdateDataUser = styled.button`
 margin-top:20px;
 width: 135px;
-font-size: 1rem;
+font-size: 0.8rem;
 height: 50px;
 background: rgb(64, 64, 64);
 color: white;
@@ -62,9 +58,6 @@ transition: 0.3s;
     box - shadow: 0 0 2px 2px #343434;
 }
 `
-
-
-
 class MojeKonto extends React.Component {
     state = {
         username: '',
@@ -123,7 +116,7 @@ class MojeKonto extends React.Component {
                     <Page>
 
 
-                        <Lables htmlFor="name">Twoję imię i nazwisko
+                        <Lables htmlFor="name">Twoje imię i nazwisko
             <IpnutStyled type="text" id="name" name='username' value={this.state.username}
                                 onChange={this.handleChange} disabled
                             ></IpnutStyled>
@@ -138,7 +131,7 @@ class MojeKonto extends React.Component {
                                 onChange={this.handleChange}
                             ></IpnutStyled></Lables>
 
-                        <Lables htmlFor="pesel">Twój numer pesel
+                        <Lables htmlFor="pesel">Twój numer PESEL
             <IpnutStyled type="pesel" id="pesel" name="pesel" value={this.state.pesel}
                                 onChange={this.handleChange}
                             ></IpnutStyled></Lables>

@@ -4,7 +4,6 @@ import styled from "styled-components";
 export const AllInputsWithLabelsWrapper = styled.div`
   display: flex;
   width: 100%;
-  max-width: 250px;
   flex-flow: column nowrap;
   justify-content: space-around;
   align-items: center;
@@ -19,4 +18,11 @@ export const SingleInputWithLabelWrapper = styled.div`
   width: 100%;
   height: 50px;
   padding: 5px;
+
+  @media(max-width:1024px){
+     height: 40px;
+
+  
+      
+    }
 `;

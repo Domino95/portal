@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const Text = styled.a`
 width:100%;
-font-size: 1.8rem;
+font-size: 1.2rem;
 letter-spacing: 3px;
 padding: 20px 0 5px 5px;
 letter-spacing:1.1px;
@@ -18,7 +18,6 @@ margin-top:10px;
 padding: 10px 30px 20px 30px;
 display:block;
 `
-
 const Page = styled.div`
 width: 100%
 margin-top:15px
@@ -27,16 +26,13 @@ padding: 10px;
 background: #fff;
 border: 1px solid #ddd;
 `
-
 const Element = styled.div`
 display: flex;
-font-size: 1.5rem;
+font-size: 1rem;
 width: 10%;
 font-weight: bold;
 align-items: baseline;
-
 `
-
 const ElementUser = styled(Element)`
 color: #00a271;
 font-weight: normal;
@@ -48,24 +44,17 @@ display:flex
 padding:10px;`
 
 const Comment = styled.a`
-font-size: 1 rem;
+font-size: 1rem;
 letter-spacing: 1pxl;
 display: block;
 `
-
 class Szczegoly extends React.Component {
-
-
     render() {
-
         const { data, godzina, lekarz, placówka, komentarz } = this.props.location.aboutProps
-
-
         return (
             <>
                 <Frame>
-                    <Text>Szczegóły wizyty:</Text>
-
+                    <Text>Szczegóły wizyty</Text>
                     <Page>
                         <Row> <Element>   Data: </Element>   <ElementUser> {data} </ElementUser> </Row>
                         <Row>   <Element>   Godzina:  </Element> <ElementUser> {godzina} </ElementUser></Row>
@@ -73,13 +62,11 @@ class Szczegoly extends React.Component {
                         <Row>   <Element>  Placówka: </Element> <ElementUser> {placówka} </ElementUser></Row>
                     </Page>
 
-
-
-                    <Text>Przebieg wizyty oraz wskazania doktora: </Text>
+                    <Text>Przebieg wizyty oraz wskazania doktora </Text>
                     <Page>
 
                         {komentarz ? <Comment><pre>
-                            {komentarz}</pre></Comment> : <h2>Brak komentarza</h2>}
+                            {komentarz}</pre></Comment> : <h3>Brak komentarza</h3>}
 
                     </Page>
 

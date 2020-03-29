@@ -21,18 +21,12 @@ margin-right:auto;
 display:block;
 `
 
-
-
 const UpdateDataInfo = styled.h3`
 padding:20% 0 0 0 ;
 color: red;
-font-size: 2rem;
-text-align:center
-;
+font-size: 1.8rem;
+text-align:center;
 `
-
-
-
 class ReservationPage extends React.Component {
 
     state = {
@@ -46,8 +40,6 @@ class ReservationPage extends React.Component {
         date: new Date().toISOString().slice(0, 10),
         user: []
     }
-
-
     handleSelect = e => {
         const { firebaseData, selectedplacowka, selectedspecialization } = this.state;
         const { id, value } = e.target;
@@ -81,16 +73,12 @@ class ReservationPage extends React.Component {
             });
         }
     };
-
     handleDate = (e) => {
         this.setState({ date: e.target.value })
     }
-
-
     componentDidMount() {
         this.props.firebase.Form().on("value", snapshot => {
             const value = snapshot.val();
-
             this.setState({
                 doctors: value.Doktorzy.doctors,
                 placowki: value.Placówki.placowki,
@@ -101,46 +89,31 @@ class ReservationPage extends React.Component {
                     specialization: value.Specjalizacja.specialization
                 }
             });
-
         });
         this.props.firebase.db.ref(`users/${this.props.firebase.getCurrentInfoUser().uid}`).on('value', snapshot => {
             const value = snapshot.val()
-
-
-
             this.setState({
                 user: value
             })
         });
-
     }
-
-
-
     render() {
         if (this.state.date < new Date().toISOString().slice(0, 10))
             this.setState({ date: new Date().toISOString().slice(0, 10) })
-
-
         if (this.state.user.pesel === "" || this.state.user.phoneNumber === ""
         )
             return (
                 <>
-
                     <UpdateDataInfo> Aby zarezerwować wizytę uzupełnij swoje dane! </UpdateDataInfo>
                     <NavLink to={konto}>
                         <UpdateDataButton>Uzupełnij dane</UpdateDataButton>
                     </NavLink>
-
-
                 </>
             )
-
         else
             return (
                 <>
                     <Form
-
                         doctors={this.state.doctors}
                         placowki={this.state.placowki}
                         handleSelect={this.handleSelect}
@@ -148,7 +121,6 @@ class ReservationPage extends React.Component {
                         selectedspecialization={this.state.selectedspecialization}
                         selectedplacowka={this.state.selectedplacowka}
                         date={this.state.date}
-
                     />
 
 
@@ -157,11 +129,9 @@ class ReservationPage extends React.Component {
                         selectedspecialization={this.state.selectedspecialization}
                         selectedplacowka={this.state.selectedplacowka}
                         date={this.state.date}
-
                     />
                 </>
             )
-
     }
 }
 export default withFirebase(ReservationPage);
